@@ -1,0 +1,50 @@
+﻿@model IEnumerable<RapidApiConsume.Models.ExchangeViewModel.Exchange_Rates>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <br />
+    <br />
+
+    <div class="container">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.currency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.exchange_rate_buy)
+            </th>
+          
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exchange_rate_buy)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+</body>
+</html>

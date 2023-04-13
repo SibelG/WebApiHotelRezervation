@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ResultServiceDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceIcon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceIcon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+              <td>
+                <a href="/Service/UpdateService/@item.ServiceId" class="btn mb-1 btn-rounded btn-outline-success">Edit</a>
+                  
+            </td>
+            <td>
+                 <a href="" class="btn mb-1 btn-rounded btn-outline-dark">Detail</a>
+            </td>
+            <td>
+               <a href="/Service/DeleteService/@item.ServiceId" class="btn mb-1 btn-rounded btn-outline-danger">Delete</a>
+                
+            </td>
+     
+        </tr>
+}
+    </tbody>
+</table>
+<a href="/Service/NewService/" class="btn mb-1 btn-rounded btn-outline-info">New Service</a>
+

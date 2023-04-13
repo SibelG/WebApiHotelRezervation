@@ -1,0 +1,65 @@
+﻿@model IEnumerable<RapidApiConsume.Models.ApiMovieViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+   
+    <br />
+    <br />
+
+<div class="container">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trailer)
+            </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.rank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.trailer)*@
+                <a href="#" class="btn btn-dark">Play Fragment</a>
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+</body>
+</html>
